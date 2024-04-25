@@ -1,6 +1,6 @@
 name: CI
 on:
-  push:
+  push: {}
   pull_request:
     types: [opened, reopened]
 
@@ -11,19 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: latest
-
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
+          bun-version: latest
 
       - name: 🔧 Install modules
-        run: pnpm install
+        run: bun install
 
       - name: ⚙️ Build app
-        run: pnpm run build
+        run: bun run build
 
   linters:
     name: 🔬 Linters
@@ -33,19 +29,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: latest
-
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
+          bun-version: latest
 
       - name: 🔧 Install modules
-        run: pnpm install
+        run: bun install
 
       - name: 🔬 Run ESLint
-        run: pnpm run lint
+        run: bun run lint
 
       - name: 🔬 Run Typecheck
-        run: pnpm run typecheck
+        run: bun run typecheck
