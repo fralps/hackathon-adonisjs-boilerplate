@@ -27,7 +27,7 @@ main() {
   (
     cd .. \
       && echo "[backend] running bun install" \
-      && pnpm install > /dev/null \
+      && bun install > /dev/null \
       && node ace migration:run
   )
 
