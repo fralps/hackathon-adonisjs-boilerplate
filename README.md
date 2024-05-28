@@ -25,7 +25,7 @@ gem install foreman
 
 ## Development
 
-- **(ℹ️ only for first setup)** Create manually your DB via psql or TablePlus
+- **(ℹ️ only for first setup)** Create manually your DB via psql or TablePlus: `CREATE DATABASE dbname OWNER rolename;`
 - Run `./scripts/reset-db` to setup database and seed
 - Run `./scripts/dev` to start development server
 
